@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Remodel & Design | HomeLife Hub</title>
+<style>
+* { box-sizing:border-box; margin:0; padding:0; }
+ul { list-style-type:none; }
+body { font-family:'맑은 고딕','돋움'; font-size:100%; }
+
+.c_3  { width:25%;    float:left; padding:10px; }
+.c_8  { width:66.66%; float:left; padding:10px; }
+.c_12 { width:100%; }
+
+@media only screen and (min-width:768px) {
+  .c_m_3  { width:25%;  }
+  .c_m_9  { width:75%;  }
+  .c_m_12 { width:100%; }
+}
+
+header { height:80px; padding:20px; background-color:#4a7c59; }
+header h1 { color:#fff; font-size:1.5em; line-height:40px; }
+
+aside#menu { background-color:#ffffff; }
+aside#menu li { margin:5px 0 0; background-color:#6aaa7e; }
+aside#menu li a { display:block; padding:10px 14px; color:#fff; text-decoration:none; font-size:0.9em; }
+aside#menu li a:hover, aside#menu li.active a { background-color:#2d5a3d; }
+
+section#main { padding:5px; font-size:0.95em; line-height:138%; }
+section#main img { width:100%; }
+
+.page-banner { position:relative; margin-bottom:14px; }
+.page-banner img { width:100%; height:180px; object-fit:cover; display:block; }
+.page-banner .btxt { position:absolute; bottom:0; left:0; right:0; background:rgba(0,0,0,0.5); color:#fff; padding:10px 14px; }
+.page-banner .btxt h2 { font-size:1em; margin-bottom:2px; }
+.page-banner .btxt p  { font-size:0.8em; opacity:0.9; }
+
+.sec-title { font-size:0.97em; color:#2d5a3d; border-left:4px solid #6aaa7e; padding-left:9px; margin:14px 0 9px; }
+
+/* 비용 바 */
+.cost-item { margin-bottom:12px; }
+.cost-label { display:flex; justify-content:space-between; font-size:0.84em; color:#333; margin-bottom:4px; }
+.bar-bg { background:#ddd; border-radius:4px; height:10px; overflow:hidden; }
+.bar-fill { height:100%; background:linear-gradient(to right, #4a7c59, #6aaa7e); border-radius:4px; }
+
+/* 사례 카드 2열 */
+.remodel-grid { overflow:hidden; }
+.remodel-card { float:left; width:31%; margin-right:3%; margin-bottom:12px; background:#f5fbf5; border:1px solid #c8e6c9; border-radius:5px; overflow:hidden; }
+.remodel-card:nth-child(3n) { margin-right:0; }
+.remodel-card img { width:100%; height:100px; object-fit:cover; display:block; }
+.remodel-card-body { padding:8px 10px; }
+.remodel-card-body h4 { font-size:0.85em; color:#2d5a3d; margin-bottom:3px; }
+.remodel-card-body .price { color:#c0781a; font-size:0.82em; font-weight:bold; margin-bottom:3px; }
+.remodel-card-body p { font-size:0.78em; color:#555; line-height:1.5; }
+
+/* 표 */
+.guide-tbl { width:100%; border-collapse:collapse; font-size:0.82em; margin-top:6px; }
+.guide-tbl th { background-color:#4a7c59; color:#fff; padding:7px 9px; text-align:left; }
+.guide-tbl td { padding:7px 9px; border-bottom:1px solid #ddd; }
+.guide-tbl tr:nth-child(even) td { background:#f5fbf5; }
+
+aside#photos { margin:5px 0 0; }
+aside#photos ul { overflow:hidden; }
+aside#photos ul li { float:left; width:33.33%; padding:3px; }
+aside#photos ul li img { width:100%; height:90px; object-fit:cover; display:block; }
+
+footer { height:60px; padding:10px; clear:both; text-align:center; background-color:#eeeeee; font-size:0.85em; color:#555; line-height:40px; }
+
+@media only screen and (max-width:767px) {
+  aside#menu  { width:100%; float:none; }
+  section#main { width:100%; float:none; }
+  .remodel-card { width:100%; margin-right:0; }
+  aside#photos ul li { width:50%; }
+}
+</style>
+</head>
+<body>
+
+<header class="c_12">
+  <h1>🏠 HomeLife Hub – 주거 생활 정보 허브</h1>
+</header>
+
+<aside id="menu" class="c_m_3 c_3">
+  <ul>
+    <li><a href="index.html">🏠 Home</a></li>
+    <li><a href="moving.html">📦 Moving &amp; Checklist</a></li>
+    <li><a href="layout.html">🛋️ Layout &amp; SpaceFit</a></li>
+    <li><a href="rent.html">📊 Rent &amp; Market</a></li>
+    <li class="active"><a href="remodel.html">🔨 Remodel &amp; Design</a></li>
+    <li><a href="safety.html">🛡️ Safety &amp; Community</a></li>
+  </ul>
+</aside>
+
+<section id="main" class="c_m_9 c_8">
+
+  <div class="page-banner">
+    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80" alt="리모델링">
+    <div class="btxt">
+      <h2>🔨 리모델링 비용 가이드 &amp; 인테리어 사례</h2>
+      <p>예산별 리모델링 방법과 실제 사례로 비용 대비 최고 효과를 내세요.</p>
+    </div>
+  </div>
+
+  <!-- 비용 바 -->
+  <p class="sec-title">💰 공간별 리모델링 평균 비용</p>
+  <div style="background:#f5fbf5; border:1px solid #c8e6c9; border-radius:5px; padding:12px 14px; margin-bottom:14px;">
+    <div class="cost-item">
+      <div class="cost-label"><span>🖼️ 도배 (원룸 기준)</span><span>30~80만 원</span></div>
+      <div class="bar-bg"><div class="bar-fill" style="width:15%"></div></div>
+    </div>
+    <div class="cost-item">
+      <div class="cost-label"><span>💡 조명 교체 (전체)</span><span>20~60만 원</span></div>
+      <div class="bar-bg"><div class="bar-fill" style="width:12%"></div></div>
+    </div>
+    <div class="cost-item">
+      <div class="cost-label"><span>🚿 욕실 부분 리폼</span><span>100~300만 원</span></div>
+      <div class="bar-bg"><div class="bar-fill" style="width:30%"></div></div>
+    </div>
+    <div class="cost-item">
+      <div class="cost-label"><span>🍳 주방 싱크대 교체</span><span>200~600만 원</span></div>
+      <div class="bar-bg"><div class="bar-fill" style="width:50%"></div></div>
+    </div>
+    <div class="cost-item">
+      <div class="cost-label"><span>🪟 창호 교체 (전체)</span><span>500~1,500만 원</span></div>
+      <div class="bar-bg"><div class="bar-fill" style="width:75%"></div></div>
+    </div>
+    <div class="cost-item">
+      <div class="cost-label"><span>🏠 전체 리모델링 (33㎡)</span><span>1,000~3,000만 원</span></div>
+      <div class="bar-bg"><div class="bar-fill" style="width:100%"></div></div>
+    </div>
+    <p style="font-size:0.75em; color:#888; margin-top:8px;">※ 지역·업체·자재 등급에 따라 달라질 수 있습니다. 반드시 복수 견적을 받으세요.</p>
+  </div>
+
+  <!-- 인테리어 사례 -->
+  <p class="sec-title">✨ 실제 인테리어 사례</p>
+  <div class="remodel-grid">
+    <div class="remodel-card">
+      <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&q=80" alt="도배">
+      <div class="remodel-card-body">
+        <h4>🖼️ 원룸 셀프 도배</h4>
+        <p class="price">예산: 약 40만 원</p>
+        <p>벽지 직접 구매 + 셀프 시공. 밝은 색상으로 공간 환기 효과.</p>
+      </div>
+    </div>
+    <div class="remodel-card">
+      <img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=400&q=80" alt="조명">
+      <div class="remodel-card-body">
+        <h4>💡 간접조명 인테리어</h4>
+        <p class="price">예산: 약 30만 원</p>
+        <p>LED 스트립라이트 + 펜던트 교체로 호텔 감성 구현.</p>
+      </div>
+    </div>
+    <div class="remodel-card">
+      <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400&q=80" alt="욕실">
+      <div class="remodel-card-body">
+        <h4>🚿 욕실 미니 리폼</h4>
+        <p class="price">예산: 약 150만 원</p>
+        <p>실리콘·수전 교체 + 욕실 시트지로 깔끔하게 완성.</p>
+      </div>
+    </div>
+    <div class="remodel-card">
+      <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=400&q=80" alt="주방">
+      <div class="remodel-card-body">
+        <h4>🍳 주방 셀프 시트지</h4>
+        <p class="price">예산: 약 20만 원</p>
+        <p>싱크대·타일 시트지 부착만으로 분위기 완전 전환.</p>
+      </div>
+    </div>
+    <div class="remodel-card">
+      <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=400&q=80" alt="바닥">
+      <div class="remodel-card-body">
+        <h4>🪵 셀프 장판 교체</h4>
+        <p class="price">예산: 약 60만 원</p>
+        <p>롤 장판 DIY 시공. 발열 바닥재 선택 시 보온 효과.</p>
+      </div>
+    </div>
+    <div class="remodel-card">
+      <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471?w=400&q=80" alt="발코니">
+      <div class="remodel-card-body">
+        <h4>🌿 발코니 미니 가든</h4>
+        <p class="price">예산: 약 15만 원</p>
+        <p>화분 + 인조잔디 + 파티오 의자로 힐링 공간 완성.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIY vs 전문업체 -->
+  <p class="sec-title" style="clear:both;">🔍 DIY vs 전문업체 선택 가이드</p>
+  <table class="guide-tbl">
+    <thead>
+      <tr><th>항목</th><th>DIY 추천</th><th>전문업체 추천</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>도배·시트지</td><td>✅ 비용 절감, 유튜브 학습 가능</td><td>고급 벽지, 넓은 면적</td></tr>
+      <tr><td>조명 교체</td><td>✅ 단순 교체는 셀프 가능</td><td>전기 배선 변경 시</td></tr>
+      <tr><td>욕실 실리콘</td><td>✅ 재시공 정도는 셀프</td><td>방수 공사·타일 교체</td></tr>
+      <tr><td>바닥 공사</td><td>롤 장판은 셀프 가능</td><td>✅ 강마루·강화마루</td></tr>
+      <tr><td>창호 교체</td><td>❌ 위험, 전문업체 필수</td><td>✅ 반드시 전문업체</td></tr>
+      <tr><td>전기·가스</td><td>❌ 절대 셀프 금지</td><td>✅ 반드시 자격자</td></tr>
+    </tbody>
+  </table>
+
+  <aside id="photos" class="c_m_12 c_3">
+    <p class="sec-title" style="margin-top:10px;">📸 인테리어 갤러리</p>
+    <ul>
+      <li><img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=400&q=80" alt="인테리어1"></li>
+      <li><img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=400&q=80" alt="인테리어2"></li>
+      <li><img src="https://images.unsplash.com/photo-1597218868981-1b68e15f0065?w=400&q=80" alt="인테리어3"></li>
+    </ul>
+  </aside>
+
+</section>
+
+<footer class="c_12">
+  ⓒ HomeLife Hub All Rights Reserved. | 202535009 현세은
+</footer>
+
+</body>
+</html>

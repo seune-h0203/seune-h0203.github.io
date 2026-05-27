@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moving & Checklist | HomeLife Hub</title>
+<style>
+* { box-sizing:border-box; margin:0; padding:0; }
+ul { list-style-type:none; }
+body { font-family:'맑은 고딕','돋움'; font-size:100%; }
+
+.c_3  { width:25%;   float:left; padding:10px; }
+.c_8  { width:66.66%; float:left; padding:10px; }
+.c_12 { width:100%; }
+
+@media only screen and (min-width:768px) {
+  .c_m_3  { width:25%;   }
+  .c_m_9  { width:75%;   }
+  .c_m_12 { width:100%;  }
+}
+
+header { height:80px; padding:20px; background-color:#4a7c59; }
+header h1 { color:#fff; font-size:1.5em; line-height:40px; }
+
+aside#menu { background-color:#ffffff; }
+aside#menu li { margin:5px 0 0; background-color:#6aaa7e; }
+aside#menu li a { display:block; padding:10px 14px; color:#fff; text-decoration:none; font-size:0.9em; }
+aside#menu li a:hover, aside#menu li.active a { background-color:#2d5a3d; }
+
+section#main { padding:5px; font-size:0.95em; line-height:138%; }
+section#main img { width:100%; }
+
+.page-banner { position:relative; margin-bottom:14px; }
+.page-banner img { width:100%; height:180px; object-fit:cover; display:block; }
+.page-banner .btxt {
+  position:absolute; bottom:0; left:0; right:0;
+  background:rgba(0,0,0,0.5); color:#fff; padding:10px 14px;
+}
+.page-banner .btxt h2 { font-size:1em; margin-bottom:2px; }
+.page-banner .btxt p  { font-size:0.8em; opacity:0.9; }
+
+.sec-title { font-size:0.97em; color:#2d5a3d; border-left:4px solid #6aaa7e; padding-left:9px; margin:14px 0 9px; }
+
+/* 체크리스트 */
+.check-group { margin-bottom:16px; background:#f5fbf5; border:1px solid #c8e6c9; border-radius:5px; padding:10px 12px; }
+.check-group h3 { font-size:0.9em; color:#2d5a3d; margin-bottom:8px; padding-bottom:5px; border-bottom:1px solid #c8e6c9; }
+.check-group ul li {
+  padding:6px 0;
+  border-bottom:1px dashed #ddeedd;
+  font-size:0.85em;
+  color:#333;
+  display:flex; align-items:flex-start; gap:8px;
+}
+.check-group ul li:last-child { border-bottom:none; }
+.check-group ul li input[type="checkbox"] { margin-top:2px; accent-color:#4a7c59; flex-shrink:0; }
+
+/* 비용 계산기 */
+.calc-box { background:#fff; border:1px solid #c8e6c9; border-radius:5px; padding:12px; margin-bottom:14px; }
+.calc-box h3 { font-size:0.9em; color:#2d5a3d; margin-bottom:10px; }
+.calc-row { display:flex; align-items:center; gap:8px; margin-bottom:8px; flex-wrap:wrap; }
+.calc-row label { font-size:0.83em; color:#444; min-width:90px; }
+.calc-row select {
+  padding:6px 8px; border:1px solid #c8e6c9; border-radius:4px;
+  font-size:0.83em; background:#f5fbf5; font-family:inherit; flex:1; min-width:140px;
+}
+.btn-calc {
+  background:#4a7c59; color:#fff; border:none;
+  padding:8px 18px; border-radius:4px; cursor:pointer;
+  font-size:0.85em; font-family:inherit; margin-top:4px;
+}
+.btn-calc:hover { background:#2d5a3d; }
+.calc-result {
+  display:none; background:#e8f5e0; border:1px solid #a5d6a7;
+  border-radius:4px; padding:10px 12px; margin-top:10px;
+  font-size:0.85em; color:#2d5a3d;
+}
+
+aside#photos { margin:5px 0 0; }
+aside#photos ul { overflow:hidden; }
+aside#photos ul li { float:left; width:33.33%; padding:3px; }
+aside#photos ul li img { width:100%; height:90px; object-fit:cover; display:block; }
+
+footer { height:60px; padding:10px; clear:both; text-align:center; background-color:#eeeeee; font-size:0.85em; color:#555; line-height:40px; }
+
+@media only screen and (max-width:767px) {
+  aside#menu  { width:100%; float:none; }
+  section#main { width:100%; float:none; }
+  .page-banner img { height:140px; }
+  aside#photos ul li { width:50%; }
+}
+</style>
+</head>
+<body>
+
+<header class="c_12">
+  <h1>🏠 HomeLife Hub – 주거 생활 정보 허브</h1>
+</header>
+
+<aside id="menu" class="c_m_3 c_3">
+  <ul>
+    <li><a href="index.html">🏠 Home</a></li>
+    <li class="active"><a href="moving.html">📦 Moving &amp; Checklist</a></li>
+    <li><a href="layout.html">🛋️ Layout &amp; SpaceFit</a></li>
+    <li><a href="rent.html">📊 Rent &amp; Market</a></li>
+    <li><a href="remodel.html">🔨 Remodel &amp; Design</a></li>
+    <li><a href="safety.html">🛡️ Safety &amp; Community</a></li>
+  </ul>
+</aside>
+
+<section id="main" class="c_m_9 c_8">
+
+  <div class="page-banner">
+    <img src="https://images.unsplash.com/photo-1600518464441-9154a4dea21b?w=900&q=80" alt="이사 배너">
+    <div class="btxt">
+      <h2>📦 이사 준비 단계별 체크리스트</h2>
+      <p>이사 날짜에 맞춰 빠진 항목 없이 완벽하게 준비하세요!</p>
+    </div>
+  </div>
+
+  <!-- 비용 계산기 -->
+  <p class="sec-title">💰 이사 비용 간편 계산기</p>
+  <div class="calc-box">
+    <h3>이사 유형과 조건을 선택하면 예상 비용을 알려드려요.</h3>
+    <div class="calc-row">
+      <label>이사 유형</label>
+      <select id="moveType">
+        <option value="semi">반포장 이사</option>
+        <option value="full">포장 이사</option>
+        <option value="self">셀프 이사 (용달)</option>
+      </select>
+    </div>
+    <div class="calc-row">
+      <label>이동 거리</label>
+      <select id="moveDist">
+        <option value="near">10km 이내 (단거리)</option>
+        <option value="mid">10~30km (중거리)</option>
+        <option value="far">30km 초과 (장거리)</option>
+      </select>
+    </div>
+    <div class="calc-row">
+      <label>방 개수</label>
+      <select id="roomCount">
+        <option value="1">원룸 / 1룸</option>
+        <option value="2">1.5룸 / 2룸</option>
+        <option value="3">3룸 이상</option>
+      </select>
+    </div>
+    <button class="btn-calc" onclick="calcMove()">예상 비용 계산하기</button>
+    <div class="calc-result" id="calcResult"></div>
+  </div>
+
+  <!-- 4주 전 -->
+  <p class="sec-title">📅 이사 4주 전</p>
+  <div class="check-group">
+    <h3>계약 & 업체 준비</h3>
+    <ul>
+      <li><input type="checkbox"> 이사 날짜 확정 및 이사업체 3곳 이상 견적 비교</li>
+      <li><input type="checkbox"> 현 주거지 임대차 계약 해지 통보 (집주인에게 서면 전달)</li>
+      <li><input type="checkbox"> 새 집 계약서 재확인 — 등기부등본, 건축물대장 열람</li>
+      <li><input type="checkbox"> 이사업체 예약 (주말·성수기는 서두르기)</li>
+      <li><input type="checkbox"> 불필요한 짐 분류 시작 (중고 판매 / 기증 / 폐기)</li>
+    </ul>
+  </div>
+
+  <!-- 2주 전 -->
+  <p class="sec-title">📅 이사 2주 전</p>
+  <div class="check-group">
+    <h3>행정 & 준비물</h3>
+    <ul>
+      <li><input type="checkbox"> 인터넷·TV·가스·전기 이전 신청</li>
+      <li><input type="checkbox"> 우편물 주소 변경 (우체국 인터넷우편물 전송 서비스)</li>
+      <li><input type="checkbox"> 포장 박스·완충재·테이프 구매</li>
+      <li><input type="checkbox"> 가전제품 이전설치 예약 (냉장고·세탁기)</li>
+      <li><input type="checkbox"> 이사 당일 식사·주차 계획 수립</li>
+    </ul>
+  </div>
+
+  <!-- 이사 당일 -->
+  <p class="sec-title">📅 이사 당일</p>
+  <div class="check-group">
+    <h3>현장 확인</h3>
+    <ul>
+      <li><input type="checkbox"> 새 집 입장 전 상태 사진 촬영 (손상 여부 기록)</li>
+      <li><input type="checkbox"> 가스·수도·전기 계량기 현황 확인 및 기록</li>
+      <li><input type="checkbox"> 이사 완료 후 이전 집 열쇠 반납</li>
+      <li><input type="checkbox"> 임대차계약서 원본 안전한 곳 보관</li>
+      <li><input type="checkbox"> 이사업체와 인수인계 확인서 작성</li>
+    </ul>
+  </div>
+
+  <!-- 이사 후 -->
+  <p class="sec-title">📅 이사 후 2주 이내</p>
+  <div class="check-group">
+    <h3>행정 처리</h3>
+    <ul>
+      <li><input type="checkbox"> 주민센터 전입신고 (이사 후 14일 이내 의무)</li>
+      <li><input type="checkbox"> 확정일자 받기 (전입신고와 동시 가능)</li>
+      <li><input type="checkbox"> 운전면허증·금융거래 주소 변경</li>
+      <li><input type="checkbox"> 건강보험·국민연금 주소 변경</li>
+      <li><input type="checkbox"> 자녀 학교 전학 수속 (해당자)</li>
+    </ul>
+  </div>
+
+  <aside id="photos" class="c_m_12 c_3">
+    <p class="sec-title">📸 이사 현장</p>
+    <ul>
+      <li><img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&q=80" alt="박스"></li>
+      <li><img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=400&q=80" alt="이삿짐"></li>
+      <li><img src="https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?w=400&q=80" alt="새집"></li>
+    </ul>
+  </aside>
+
+</section>
+
+<footer class="c_12">
+  ⓒ HomeLife Hub All Rights Reserved. | 202535009 현세은
+</footer>
+
+<script>
+function calcMove() {
+  var type = document.getElementById('moveType').value;
+  var dist = document.getElementById('moveDist').value;
+  var room = document.getElementById('roomCount').value;
+  var base = {semi:30, full:60, self:15};
+  var dm   = {near:1, mid:1.3, far:1.7};
+  var rm   = {'1':1, '2':1.4, '3':1.9};
+  var est  = Math.round(base[type] * dm[dist] * rm[room]);
+  var lbl  = {semi:'반포장 이사', full:'포장 이사', self:'셀프(용달) 이사'};
+  var r = document.getElementById('calcResult');
+  r.style.display = 'block';
+  r.innerHTML = '✅ <strong>' + lbl[type] + '</strong> 예상 비용: <strong>약 ' + est + '만 원</strong><br>'
+    + '<span style="font-size:0.8em;color:#555;">※ 실제 비용은 업체·이동거리·짐 양에 따라 달라집니다. 반드시 3곳 이상 견적 비교하세요.</span>';
+}
+</script>
+</body>
+</html>
