@@ -4,8 +4,10 @@
 직방·호갱노노 스타일의 깔끔한 주거/부동산 플랫폼 UI
 
 ## 깃허브 주소
-- GitHub 저장소: https://github.com/seune-h0203/NESTRA
-- GitHub Pages (배포 데모): https://seune-h0203.github.io/NESTRA/
+
+* GitHub 저장소: https://github.com/seune-h0203/seune-h0203.github.io
+* GitHub Pages (배포 데모): https://seune-h0203.github.io/
+
 
 ## 제작자
 - 컴퓨터공학과 202535009 현세은
