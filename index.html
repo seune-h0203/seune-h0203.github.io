@@ -1,327 +1,239 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HomeLife Hub</title>
-<style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-ul { list-style-type: none; }
-body {
-  font-family: '맑은 고딕', '돋움';
-  font-size: 100%;
-}
-
-/* ── 교재 그리드 c_1 ~ c_12 ── */
-.c_1  { width:8.33%; }
-.c_2  { width:16.66%; }
-.c_3  { width:25%; }
-.c_4  { width:33.33%; }
-.c_5  { width:41.66%; }
-.c_6  { width:50%; }
-.c_7  { width:58.33%; }
-.c_8  { width:66.66%; }
-.c_9  { width:75%; }
-.c_10 { width:83.33%; }
-.c_11 { width:91.66%; }
-.c_12 { width:100%; }
-
-/* ── float:left 기본값 (c_ 클래스 공통) ── */
-.c_1,.c_2,.c_3,.c_4,.c_5,.c_6,
-.c_7,.c_8,.c_9,.c_10,.c_11 { float:left; padding:10px; }
-
-/* ── 768px 이상 미디어쿼리 ── */
-@media only screen and (min-width: 768px) {
-  .c_m_1  { width:8.33%;  }
-  .c_m_2  { width:16.66%; }
-  .c_m_3  { width:25%;    }
-  .c_m_4  { width:33.33%; }
-  .c_m_5  { width:41.66%; }
-  .c_m_6  { width:50%;    }
-  .c_m_7  { width:58.33%; }
-  .c_m_8  { width:66.66%; }
-  .c_m_9  { width:75%;    }
-  .c_m_10 { width:83.33%; }
-  .c_m_11 { width:91.66%; }
-  .c_m_12 { width:100%;   }
-}
-
-/* ── header ── */
-header {
-  height: 80px;
-  padding: 20px;
-  background-color: #4a7c59;
-}
-header h1 {
-  color: #ffffff;
-  font-size: 1.5em;
-  line-height: 40px;
-}
-
-/* ── asidemenu (aside#menu) ── */
-aside#menu {
-  background-color: #ffffff;
-}
-aside#menu li {
-  margin: 5px 0 0;
-  background-color: #6aaa7e;
-}
-aside#menu li a {
-  display: block;
-  padding: 10px 14px;
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 0.9em;
-}
-aside#menu li a:hover,
-aside#menu li.active a {
-  background-color: #2d5a3d;
-}
-
-/* ── sectionmain (section#main) ── */
-section#main {
-  padding: 5px;
-  font-size: 0.95em;
-  line-height: 138%;
-}
-section#main img {
-  width: 100%;
-}
-
-/* 메인 배너 */
-.main-banner {
-  position: relative;
-  margin-bottom: 14px;
-}
-.main-banner img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  display: block;
-}
-.main-banner .banner-txt {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  background: rgba(0,0,0,0.52);
-  color: #fff;
-  padding: 13px 16px;
-}
-.main-banner .banner-txt h2 { font-size: 1.1em; margin-bottom: 3px; }
-.main-banner .banner-txt p  { font-size: 0.82em; opacity: 0.9; }
-
-/* 섹션 타이틀 */
-.sec-title {
-  font-size: 0.97em;
-  color: #2d5a3d;
-  border-left: 4px solid #6aaa7e;
-  padding-left: 9px;
-  margin: 14px 0 9px;
-}
-
-/* 카드 3열 */
-.card-row { overflow: hidden; }
-.card-item {
-  float: left;
-  width: 32%;
-  margin-right: 2%;
-  background: #f5fbf5;
-  border: 1px solid #c8e6c9;
-  border-radius: 5px;
-  padding: 8px;
-  margin-bottom: 10px;
-}
-.card-item:last-child { margin-right: 0; }
-.card-item img {
-  width: 100%;
-  height: 95px;
-  object-fit: cover;
-  border-radius: 3px;
-  margin-bottom: 6px;
-}
-.card-item h4 { font-size: 0.85em; color: #2d5a3d; margin-bottom: 4px; }
-.card-item p  { font-size: 0.78em; color: #555; line-height: 1.5; }
-
-/* 시세 표 */
-.rent-tbl {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.82em;
-  margin-top: 6px;
-}
-.rent-tbl th {
-  background-color: #4a7c59;
-  color: #fff;
-  padding: 7px 9px;
-  text-align: center;
-}
-.rent-tbl td {
-  padding: 6px 9px;
-  border-bottom: 1px solid #ddd;
-  text-align: center;
-}
-.rent-tbl tr:nth-child(even) td { background-color: #f5fbf5; }
-
-/* aside#photos */
-aside#photos {
-  margin: 5px 0 0;
-}
-aside#photos ul { overflow: hidden; }
-aside#photos ul li {
-  float: left;
-  width: 33.33%;
-  padding: 3px;
-}
-aside#photos ul li img {
-  width: 100%;
-  height: 105px;
-  object-fit: cover;
-  display: block;
-}
-aside#photos ul li img:hover { opacity: 0.82; }
-
-/* ── footer ── */
-footer {
-  height: 60px;
-  padding: 10px;
-  clear: both;
-  text-align: center;
-  background-color: #eeeeee;
-  font-size: 0.85em;
-  color: #555555;
-  line-height: 40px;
-}
-
-/* ── 모바일 (768px 미만) ── */
-@media only screen and (max-width: 767px) {
-  aside#menu  { width:100%; float:none; }
-  section#main { width:100%; float:none; }
-  .card-item { width:100%; margin-right:0; }
-  .main-banner img { height:180px; }
-  aside#photos ul li { width:50%; }
-}
-</style>
+<title>NESTRA — 스마트 주거 라이프 플랫폼 - 똑똑한 주거 생활의 시작</title>
+<link rel="stylesheet" type="text/css" href="./common.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<!-- header -->
-<header class="c_12">
-  <h1>🏠 HomeLife Hub – 주거 생활 정보 허브</h1>
+<header>
+    <div class="logo">NESTRA</div>
+    <div class="tagline">스마트 주거 라이프 플랫폼</div>
 </header>
 
-<!-- aside 메뉴 -->
-<aside id="menu" class="c_m_3 c_3">
-  <ul>
-    <li class="active"><a href="index.html">🏠 Home</a></li>
-    <li><a href="moving.html">📦 Moving &amp; Checklist</a></li>
-    <li><a href="layout.html">🛋️ Layout &amp; SpaceFit</a></li>
-    <li><a href="rent.html">📊 Rent &amp; Market</a></li>
-    <li><a href="remodel.html">🔨 Remodel &amp; Design</a></li>
-    <li><a href="safety.html">🛡️ Safety &amp; Community</a></li>
-  </ul>
-</aside>
-
-<!-- section main -->
-<section id="main" class="c_m_9 c_8">
-
-  <!-- 메인 배너 이미지 -->
-  <div class="main-banner">
-    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80" alt="홈 배너">
-    <div class="banner-txt">
-      <h2>당신의 집, 더 똑똑하게 관리하세요</h2>
-      <p>이사 · 전월세 · 인테리어 · 안전 — 생활 밀착형 주거 정보 허브</p>
-    </div>
-  </div>
-
-  <!-- 오늘의 주거 팁 -->
-  <p class="sec-title">💡 오늘의 주거 팁</p>
-  <div class="card-row">
-    <div class="card-item">
-      <img src="https://images.unsplash.com/photo-1600518464441-9154a4dea21b?w=400&q=80" alt="이사">
-      <h4>📦 이사 2주 전 체크</h4>
-      <p>전입신고·공과금 이전 신청은 이사 2주 전에 챙기세요. 놓치면 과태료 발생!</p>
-    </div>
-    <div class="card-item">
-      <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&q=80" alt="가구">
-      <h4>🛋️ 공간 넓어 보이는 법</h4>
-      <p>낮은 가구, 밝은 컬러, 거울 배치로 좁은 원룸도 훨씬 넓어 보입니다.</p>
-    </div>
-    <div class="card-item">
-      <img src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=400&q=80" alt="계약">
-      <h4>📋 전세 계약 전 필수</h4>
-      <p>계약 전 등기부등본 열람 필수! 근저당권 설정 여부 반드시 확인하세요.</p>
-    </div>
-  </div>
-
-  <!-- 전월세 시세 -->
-  <p class="sec-title">📊 최신 전월세 시세 하이라이트</p>
-  <table class="rent-tbl">
-    <thead>
-      <tr>
-        <th>지역</th><th>유형</th><th>면적</th><th>전세 평균</th><th>월세 평균</th><th>전월 대비</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>서울 마포</td><td>빌라</td><td>33㎡</td><td>1억 8,000만</td><td>60만원</td>
-        <td style="color:#c0392b">▲ 2%</td>
-      </tr>
-      <tr>
-        <td>서울 관악</td><td>원룸</td><td>20㎡</td><td>8,500만</td><td>45만원</td>
-        <td style="color:#888">─ 유지</td>
-      </tr>
-      <tr>
-        <td>경기 수원</td><td>아파트</td><td>59㎡</td><td>2억 4,000만</td><td>85만원</td>
-        <td style="color:#27ae60">▼ 1%</td>
-      </tr>
-      <tr>
-        <td>경기 성남</td><td>빌라</td><td>46㎡</td><td>1억 5,000만</td><td>55만원</td>
-        <td style="color:#c0392b">▲ 1%</td>
-      </tr>
-    </tbody>
-  </table>
-  <p style="font-size:0.75em; color:#888; margin-top:4px;">※ 예시 데이터입니다. 실제 계약 전 국토교통부 실거래가 공개시스템을 확인하세요.</p>
-
-  <!-- 인기 리모델링 미리보기 -->
-  <p class="sec-title">🔨 인기 리모델링 사례 미리보기</p>
-  <div class="card-row">
-    <div class="card-item">
-      <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&q=80" alt="도배">
-      <h4>🎨 원룸 셀프 도배</h4>
-      <p>예산 30만원 이내, 주말 2일이면 완성. 분위기 전환 효과 최고!</p>
-    </div>
-    <div class="card-item">
-      <img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=400&q=80" alt="조명">
-      <h4>💡 조명 교체 인테리어</h4>
-      <p>LED 간접조명 교체만으로 공간 분위기를 완전히 바꿀 수 있어요.</p>
-    </div>
-    <div class="card-item">
-      <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400&q=80" alt="욕실">
-      <h4>🚿 욕실 부분 리폼</h4>
-      <p>실리콘 재시공 + 수전 교체로 욕실을 새것처럼 만드는 방법.</p>
-    </div>
-  </div>
-
-  <!-- aside#photos (교재 구조) -->
-  <aside id="photos" class="c_m_12 c_3">
-    <p class="sec-title" style="margin-top:8px;">📸 주거 갤러리</p>
+<nav>
     <ul>
-      <li><img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400&q=80" alt="거실"></li>
-      <li><img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=400&q=80" alt="주방"></li>
-      <li><img src="https://images.unsplash.com/photo-1571508601891-ca5e7a713859?w=400&q=80" alt="침실"></li>
+        <li><a href="moving.html">이사 &amp; 체크리스트</a>
+            <ul>
+                <li><a href="moving.html">이사 준비 체크리스트</a></li>
+                <li><a href="moving.html">이사 비용 계산</a></li>
+                <li><a href="moving.html">업체 선택 가이드</a></li>
+            </ul>
+        </li>
+        <li><a href="layout.html">배치 &amp; 공간활용</a>
+            <ul>
+                <li><a href="layout.html">평형별 배치</a></li>
+                <li><a href="layout.html">공간 활용 사례</a></li>
+            </ul>
+        </li>
+        <li><a href="rent.html">전월세 &amp; 시세</a>
+            <ul>
+                <li><a href="rent.html">지역별 시세</a></li>
+                <li><a href="rent.html">면적 비교</a></li>
+                <li><a href="rent.html">계약 유의사항</a></li>
+            </ul>
+        </li>
+        <li><a href="remodel.html">리모델링 &amp; 디자인</a>
+            <ul>
+                <li><a href="remodel.html">비용 가이드</a></li>
+                <li><a href="remodel.html">인테리어 사례</a></li>
+            </ul>
+        </li>
+        <li><a href="safety.html">안전 &amp; 커뮤니티</a>
+            <ul>
+                <li><a href="safety.html">안전 점검</a></li>
+                <li><a href="safety.html">유지보수 가이드</a></li>
+                <li><a href="safety.html">사용자 후기</a></li>
+            </ul>
+        </li>
     </ul>
-  </aside>
+</nav>
 
-</section>
+<div class="container">
 
-<!-- footer -->
-<footer class="c_12">
-  ⓒ HomeLife Hub All Rights Reserved. | 202535009 현세은
+    <aside class="c3">
+        <div class="side-box">
+            <h2>바로가기</h2>
+            <ul>
+                <li><a href="moving.html">이사 비용이 궁금하다면?</a></li>
+                <li><a href="rent.html">내 동네 시세 확인</a></li>
+                <li><a href="safety.html">주거 안전 점검</a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <section id="main" class="c9">
+
+        <div class="hero">
+            <img src="./img/hero.png" alt="환한 거실 이미지" loading="lazy">
+            <div class="hero-overlay"></div>
+            <div class="hero-text">
+                <p class="eyebrow">프리미엄 주거</p>
+                <h2>더 빠르고 더 안전한 주거 여정, NESTRA</h2>
+                <p>이사, 시세, 리모델링, 안전까지 집에 필요한 모든 정보를 한곳에서 쉽고 정확하게 연결합니다.</p>
+                <a href="moving.html" class="hero-button">서비스 둘러보기</a>
+                <div class="hero-meta">
+                    <span class="meta-pill">맞춤형 매칭</span>
+                    <span class="meta-pill">실시간 시세</span>
+                    <span class="meta-pill">전문가 컨설팅</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-strip">
+            <article>
+                <span>01</span>
+                <h3>데이터로 선택하는 집</h3>
+                <p>내 주변 시세와 추세를 실시간으로 분석해 합리적인 선택을 돕습니다.</p>
+            </article>
+            <article>
+                <span>02</span>
+                <h3>원스톱 주거 솔루션</h3>
+                <p>이사, 계약, 리모델링, 안전까지 한 플랫폼에서 관리할 수 있습니다.</p>
+            </article>
+            <article>
+                <span>03</span>
+                <h3>보이지 않는 위험까지</h3>
+                <p>계약 리스크와 안전 점검까지 놓치지 않는 주거 신뢰성을 제공합니다.</p>
+            </article>
+        </div>
+
+        <section class="about-nestra">
+            <div class="intro-card">
+                <p class="eyebrow">NESTRA 소개</p>
+                <h2>집이 삶의 중심이 되는 시대, 주거 여정을 스마트하게</h2>
+                <p>NESTRA는 단순 정보 제공을 넘어, 생활 공간 전체를 설계하는 주거 라이프 플랫폼입니다. 누구나 쉽게 접근할 수 있는 주거 데이터와 전문가 노하우를 한곳에 모았습니다.</p>
+                <a href="moving.html" class="hero-button">새로운 주거 여정 시작</a>
+            </div>
+            <div class="about-grid">
+                <div class="about-item">
+                    <h3>신뢰할 수 있는 시세</h3>
+                    <p>공인된 데이터와 지역별 분석으로 시장 흐름을 정확하게 보여줍니다.</p>
+                </div>
+                <div class="about-item">
+                    <h3>맞춤형 서비스</h3>
+                    <p>신혼부부, 1인 가구, 가족형 주거까지 상황별 맞춤 추천을 제공합니다.</p>
+                </div>
+                <div class="about-item">
+                    <h3>안전한 생활</h3>
+                    <p>시설 점검과 유지보수 체크리스트로 집의 안전성을 미리 관리합니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="video-highlight">
+            <div class="video-card">
+                <img src="./img/video-poster.png" alt="NESTRA 서비스 소개" class="video-poster">
+                <div class="video-info">
+                    <span class="video-badge">서비스 소개</span>
+                    <h3>NESTRA 플랫폼 주요 기능</h3>
+                    <p>집 구하기부터 이사, 계약, 리모델링까지 필요한 정보를 한눈에 확인하세요.</p>
+                    <a href="moving.html" class="hero-button">자세히 보기</a>
+                </div>
+            </div>
+        </section>
+
+        <h2>핵심 서비스</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <div class="service-icon">①</div>
+                <h3>이사 &amp; 체크리스트</h3>
+                <p>이사 준비 단계별 체크리스트와 예상 비용을 한눈에 확인합니다.</p>
+                <a href="moving.html">자세히 보기</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">②</div>
+                <h3>전월세 &amp; 시세</h3>
+                <p>지역별 전월세 시세와 면적 비교로 합리적인 선택을 돕습니다.</p>
+                <a href="rent.html">자세히 보기</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">③</div>
+                <h3>리모델링 &amp; 디자인</h3>
+                <p>최신 리모델링 트렌드와 비용 가이드를 한 곳에서 제공합니다.</p>
+                <a href="remodel.html">자세히 보기</a>
+            </div>
+        </div>
+
+        <h2>오늘의 주거 소식</h2>
+        <div class="card-grid">
+            <div class="card">
+                <img class="card-img" src="./img/card-apartment.png" alt="아파트 시세" loading="lazy">
+                <div class="card-body">
+                    <h3>수도권 원룸·투룸 평균 시세</h3>
+                    <p>서울 원룸 평균 보증금/월세, 경기·지방 비교 데이터를 전월세 &amp; 시세에서 확인하세요.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img" src="./img/card-bedroom.png" alt="침실 인테리어" loading="lazy">
+                <div class="card-body">
+                    <h3>20평대 신혼집 리모델링</h3>
+                    <p>주방·욕실 위주 부분 리모델링으로 비용을 절감한 사례를 리모델링 &amp; 디자인에서 만나보세요.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img" src="./img/card-kitchen.png" alt="주방 리모델링" loading="lazy">
+                <div class="card-body">
+                    <h3>이사 전 체크리스트 미리 챙기기</h3>
+                    <p>전입신고·확정일자는 이사 당일 바로 처리하는 것이 보증금 보호에 유리합니다.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img" src="./img/card-safety.png" alt="주거 안전" loading="lazy">
+                <div class="card-body">
+                    <h3>우리 집 안전 점검하기</h3>
+                    <p>화재경보기·가스 누수·잠금장치까지, 안전 &amp; 커뮤니티에서 체크리스트를 확인하세요.</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="trust-strip">
+            <p>실제 입주민과 주거 전문가가 선택한 믿음직한 플랫폼</p>
+            <div class="trust-list">
+                <span>실거주</span>
+                <span>공간 연구</span>
+                <span>도시 이동</span>
+                <span>안전 생활</span>
+            </div>
+        </section>
+
+    </section>
+
+    <aside class="c1">
+        <div class="side-box">
+            <h2>바로가기</h2>
+            <ul>
+                <li><a href="rent.html">전세·월세 시세 비교</a></li>
+                <li><a href="rent.html">계약서 위험 요소 확인</a></li>
+                <li><a href="moving.html">이사 체크리스트 확인</a></li>
+            </ul>
+        </div>
+        <div class="side-box">
+            <h2>주거 리포트</h2>
+            <ul>
+                <li><a href="remodel.html">2026 신혼부부 주거 트렌드</a></li>
+                <li><a href="remodel.html">공간 활용 리모델링 아이디어</a></li>
+                <li><a href="safety.html">주거 안전 필수 점검 항목</a></li>
+            </ul>
+        </div>
+        <div class="side-box">
+            <h2>전문가 상담</h2>
+            <p style="margin:0;color:var(--muted);line-height:1.75">NESTRA 전문가가 이사, 계약, 리모델링까지 맞춤 상담을 제공합니다.</p>
+        </div>
+    </aside>
+
+    <div class="clear"></div>
+</div>
+
+<footer>
+    NESTRA — 스마트 주거 라이프 플랫폼<br>
+    <a href="#">개인정보처리방침</a> | <a href="#">이용약관</a> | <a href="#">국토교통부</a> | <a href="#">한국부동산원</a><br>
+    COPYRIGHT(C) NESTRA All Rights Reserved.
 </footer>
+
 
 </body>
 </html>

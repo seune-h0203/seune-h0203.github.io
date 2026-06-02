@@ -1,275 +1,152 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Safety & Community | HomeLife Hub</title>
-<style>
-* { box-sizing:border-box; margin:0; padding:0; }
-ul { list-style-type:none; }
-body { font-family:'맑은 고딕','돋움'; font-size:100%; }
-
-.c_3  { width:25%;    float:left; padding:10px; }
-.c_8  { width:66.66%; float:left; padding:10px; }
-.c_12 { width:100%; }
-
-@media only screen and (min-width:768px) {
-  .c_m_3  { width:25%;  }
-  .c_m_9  { width:75%;  }
-  .c_m_12 { width:100%; }
-}
-
-header { height:80px; padding:20px; background-color:#4a7c59; }
-header h1 { color:#fff; font-size:1.5em; line-height:40px; }
-
-aside#menu { background-color:#ffffff; }
-aside#menu li { margin:5px 0 0; background-color:#6aaa7e; }
-aside#menu li a { display:block; padding:10px 14px; color:#fff; text-decoration:none; font-size:0.9em; }
-aside#menu li a:hover, aside#menu li.active a { background-color:#2d5a3d; }
-
-section#main { padding:5px; font-size:0.95em; line-height:138%; }
-section#main img { width:100%; }
-
-.page-banner { position:relative; margin-bottom:14px; }
-.page-banner img { width:100%; height:180px; object-fit:cover; display:block; }
-.page-banner .btxt { position:absolute; bottom:0; left:0; right:0; background:rgba(0,0,0,0.5); color:#fff; padding:10px 14px; }
-.page-banner .btxt h2 { font-size:1em; margin-bottom:2px; }
-.page-banner .btxt p  { font-size:0.8em; opacity:0.9; }
-
-.sec-title { font-size:0.97em; color:#2d5a3d; border-left:4px solid #6aaa7e; padding-left:9px; margin:14px 0 9px; }
-
-/* 안전 카드 2열 */
-.safety-grid { overflow:hidden; }
-.safety-card {
-  float:left; width:48%; margin-right:2%; margin-bottom:12px;
-  background:#f5fbf5; border:1px solid #c8e6c9; border-radius:5px;
-  border-left:4px solid #4a7c59; padding:10px 12px;
-}
-.safety-card:nth-child(2n) { margin-right:0; }
-.safety-card h4 { font-size:0.88em; color:#2d5a3d; margin-bottom:7px; }
-.safety-card ul li {
-  padding:5px 0; border-bottom:1px dashed #ddeedd;
-  font-size:0.8em; color:#333; display:flex; align-items:flex-start; gap:6px;
-}
-.safety-card ul li:last-child { border-bottom:none; }
-
-/* 유지보수 카드 3열 */
-.maint-row { overflow:hidden; }
-.maint-card {
-  float:left; width:23%; margin-right:2%; margin-bottom:10px;
-  background:#f5fbf5; border:1px solid #c8e6c9; border-radius:5px; padding:9px 10px;
-}
-.maint-card:last-child { margin-right:0; }
-.maint-card .icon { font-size:1.5em; margin-bottom:5px; }
-.maint-card h4 { font-size:0.83em; color:#2d5a3d; margin-bottom:4px; }
-.maint-card p  { font-size:0.78em; color:#555; line-height:1.5; }
-
-/* 후기 */
-.review-card {
-  background:#fff; border:1px solid #c8e6c9; border-left:3px solid #6aaa7e;
-  border-radius:5px; padding:10px 12px; margin-bottom:8px;
-}
-.review-card .reviewer { font-size:0.85em; font-weight:bold; color:#2d5a3d; margin-bottom:2px; }
-.review-card .stars    { color:#f0a500; font-size:0.85em; margin-bottom:5px; }
-.review-card p         { font-size:0.82em; color:#444; line-height:1.6; }
-
-/* 후기 작성 폼 */
-.review-form { background:#f5fbf5; border:1px solid #c8e6c9; border-radius:5px; padding:12px; margin-top:12px; }
-.review-form h3 { font-size:0.9em; color:#2d5a3d; margin-bottom:10px; }
-.form-row { margin-bottom:8px; }
-.form-row label { display:block; font-size:0.82em; color:#444; margin-bottom:3px; }
-.form-row input, .form-row select, .form-row textarea {
-  width:100%; padding:7px 9px; border:1px solid #c8e6c9; border-radius:4px;
-  font-size:0.83em; background:#fff; font-family:inherit;
-}
-.form-row textarea { height:80px; resize:vertical; }
-.btn-submit {
-  background:#4a7c59; color:#fff; border:none;
-  padding:8px 18px; border-radius:4px; cursor:pointer;
-  font-size:0.85em; font-family:inherit;
-}
-.btn-submit:hover { background:#2d5a3d; }
-.success-msg { display:none; background:#e8f5e0; border:1px solid #a5d6a7; border-radius:4px; padding:8px 10px; margin-top:8px; font-size:0.83em; color:#2d5a3d; }
-
-aside#photos { margin:5px 0 0; }
-aside#photos ul { overflow:hidden; }
-aside#photos ul li { float:left; width:33.33%; padding:3px; }
-aside#photos ul li img { width:100%; height:90px; object-fit:cover; display:block; }
-
-footer { height:60px; padding:10px; clear:both; text-align:center; background-color:#eeeeee; font-size:0.85em; color:#555; line-height:40px; }
-
-@media only screen and (max-width:767px) {
-  aside#menu  { width:100%; float:none; }
-  section#main { width:100%; float:none; }
-  .safety-card { width:100%; margin-right:0; }
-  .maint-card  { width:48%; }
-  aside#photos ul li { width:50%; }
-}
-</style>
+<title>Safety & Community - NESTRA — 스마트 주거 라이프 플랫폼</title>
+<link rel="stylesheet" type="text/css" href="./common.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header class="c_12">
-  <h1>🏠 HomeLife Hub – 주거 생활 정보 허브</h1>
+<header>
+    <div class="logo">NESTRA</div>
+    <div class="tagline">스마트 주거 라이프 플랫폼</div>
 </header>
 
-<aside id="menu" class="c_m_3 c_3">
-  <ul>
-    <li><a href="index.html">🏠 Home</a></li>
-    <li><a href="moving.html">📦 Moving &amp; Checklist</a></li>
-    <li><a href="layout.html">🛋️ Layout &amp; SpaceFit</a></li>
-    <li><a href="rent.html">📊 Rent &amp; Market</a></li>
-    <li><a href="remodel.html">🔨 Remodel &amp; Design</a></li>
-    <li class="active"><a href="safety.html">🛡️ Safety &amp; Community</a></li>
-  </ul>
-</aside>
-
-<section id="main" class="c_m_9 c_8">
-
-  <div class="page-banner">
-    <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=900&q=80" alt="안전">
-    <div class="btxt">
-      <h2>🛡️ 주거 안전 점검 &amp; 유지보수 가이드</h2>
-      <p>계절별 안전 점검과 유지보수로 안전하고 쾌적한 주거 환경을 유지하세요.</p>
-    </div>
-  </div>
-
-  <!-- 안전 점검 -->
-  <p class="sec-title">🔍 주거 안전 점검 체크리스트</p>
-  <div class="safety-grid">
-    <div class="safety-card">
-      <h4>🔥 화재 안전</h4>
-      <ul>
-        <li>✅ 화재감지기 정상 작동 여부 확인</li>
-        <li>✅ 소화기 비치 및 유효기간 확인</li>
-        <li>✅ 가스레인지 주변 가연성 물건 제거</li>
-        <li>✅ 콘센트 문어발 배선 정리</li>
-        <li>✅ 비상구 및 대피 경로 숙지</li>
-      </ul>
-    </div>
-    <div class="safety-card" style="border-left-color:#2a7a6a;">
-      <h4>💧 누수 &amp; 방수</h4>
-      <ul>
-        <li>✅ 욕실·주방 실리콘 균열 확인</li>
-        <li>✅ 베란다·창틀 빗물 침투 여부</li>
-        <li>✅ 수도관 동파 방지 (겨울철)</li>
-        <li>✅ 천장·벽면 얼룩·곰팡이 확인</li>
-        <li>✅ 수도 계량기 급격한 증가 확인</li>
-      </ul>
-    </div>
-    <div class="safety-card" style="border-left-color:#c87a2a;">
-      <h4>⚡ 전기 안전</h4>
-      <ul>
-        <li>✅ 오래된 콘센트·스위치 교체</li>
-        <li>✅ 누전차단기 정상 작동 확인</li>
-        <li>✅ 멀티탭 정격 전력 초과 금지</li>
-        <li>✅ 전선 피복 손상 여부 점검</li>
-        <li>✅ 에어컨·세탁기 전용 콘센트 확인</li>
-      </ul>
-    </div>
-    <div class="safety-card" style="border-left-color:#2a5a8a;">
-      <h4>🔒 방범 &amp; 보안</h4>
-      <ul>
-        <li>✅ 현관 도어락 배터리 교체 (6개월)</li>
-        <li>✅ 창문 잠금장치 추가 설치 (1층)</li>
-        <li>✅ 디지털 도어록 비밀번호 주기 변경</li>
-        <li>✅ 건물 내 CCTV 설치 확인</li>
-        <li>✅ 이사 후 이전 열쇠 반납 확인</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- 유지보수 -->
-  <p class="sec-title" style="clear:both;">🔧 셀프 유지보수 가이드</p>
-  <div class="maint-row">
-    <div class="maint-card">
-      <div class="icon">🚿</div>
-      <h4>변기 막힘 해결</h4>
-      <p>뚫어뻥으로 먼저 시도. 화학약품은 파이프 손상 주의.</p>
-    </div>
-    <div class="maint-card">
-      <div class="icon">💧</div>
-      <h4>수전 물 떨어짐</h4>
-      <p>카트리지 교체로 해결 가능. 부품 5,000~15,000원.</p>
-    </div>
-    <div class="maint-card">
-      <div class="icon">🌫️</div>
-      <h4>결로·곰팡이 제거</h4>
-      <p>곰팡이 제거제 + 환기 필수. 방습제로 재발 방지.</p>
-    </div>
-    <div class="maint-card">
-      <div class="icon">🪲</div>
-      <h4>해충 방지</h4>
-      <p>배수구 거름망 + 방충망 점검. 월 1회 배수구 청소.</p>
-    </div>
-  </div>
-
-  <!-- 후기 -->
-  <p class="sec-title" style="clear:both;">💬 주민 후기</p>
-  <div class="review-card">
-    <div class="reviewer">김** (서울 마포 / 전세 2년차)</div>
-    <div class="stars">★★★★★</div>
-    <p>이사 후 전입신고 타이밍을 몰라 늦게 할 뻔했는데, 체크리스트 덕분에 당일 바로 처리했어요!</p>
-  </div>
-  <div class="review-card">
-    <div class="reviewer">박** (경기 수원 / 자취 3년차)</div>
-    <div class="stars">★★★★☆</div>
-    <p>욕실 실리콘 재시공을 혼자 처음 해봤는데, 유지보수 가이드 보고 따라하니 5천원에 해결!</p>
-  </div>
-  <div class="review-card">
-    <div class="reviewer">이** (서울 관악 / 신혼부부)</div>
-    <div class="stars">★★★★★</div>
-    <p>전세 계약 전 등기부등본 확인법을 여기서 알았어요. 근저당 잔뜩 잡혀있어서 계약 안 했고 정말 다행이었습니다!</p>
-  </div>
-
-  <!-- 후기 작성 폼 -->
-  <div class="review-form">
-    <h3>✏️ 후기 작성하기</h3>
-    <div class="form-row">
-      <label>닉네임 (선택)</label>
-      <input type="text" id="reviewName" placeholder="예: 마포구 자취생">
-    </div>
-    <div class="form-row">
-      <label>별점</label>
-      <select id="reviewStars">
-        <option>★★★★★ (5점)</option>
-        <option>★★★★☆ (4점)</option>
-        <option>★★★☆☆ (3점)</option>
-        <option>★★☆☆☆ (2점)</option>
-        <option>★☆☆☆☆ (1점)</option>
-      </select>
-    </div>
-    <div class="form-row">
-      <label>후기 내용 *</label>
-      <textarea id="reviewContent" placeholder="주거 생활에서 도움이 된 경험이나 팁을 공유해주세요!"></textarea>
-    </div>
-    <button class="btn-submit" onclick="submitReview()">후기 등록하기</button>
-    <div class="success-msg" id="reviewSuccess">✅ 후기가 등록되었습니다. 감사합니다!</div>
-  </div>
-
-  <aside id="photos" class="c_m_12 c_3">
-    <p class="sec-title" style="margin-top:10px;">📸 안전한 우리 집</p>
+<nav>
     <ul>
-      <li><img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&q=80" alt="집1"></li>
-      <li><img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?w=400&q=80" alt="집2"></li>
-      <li><img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=400&q=80" alt="집3"></li>
+        <li><a href="moving.html">이사 &amp; 체크리스트</a>
+            <ul>
+                <li><a href="moving.html">이사 준비 체크리스트</a></li>
+                <li><a href="moving.html">이사 비용 계산</a></li>
+                <li><a href="moving.html">업체 선택 가이드</a></li>
+            </ul>
+        </li>
+        <li><a href="layout.html">배치 &amp; 공간활용</a>
+            <ul>
+                <li><a href="layout.html">평형별 배치</a></li>
+                <li><a href="layout.html">공간 활용 사례</a></li>
+            </ul>
+        </li>
+        <li><a href="rent.html">전월세 &amp; 시세</a>
+            <ul>
+                <li><a href="rent.html">지역별 시세</a></li>
+                <li><a href="rent.html">면적 비교</a></li>
+                <li><a href="rent.html">계약 유의사항</a></li>
+            </ul>
+        </li>
+        <li><a href="remodel.html">리모델링 &amp; 디자인</a>
+            <ul>
+                <li><a href="remodel.html">비용 가이드</a></li>
+                <li><a href="remodel.html">인테리어 사례</a></li>
+            </ul>
+        </li>
+        <li><a href="safety.html">안전 &amp; 커뮤니티</a>
+            <ul>
+                <li><a href="safety.html">안전 점검</a></li>
+                <li><a href="safety.html">유지보수 가이드</a></li>
+                <li><a href="safety.html">사용자 후기</a></li>
+            </ul>
+        </li>
     </ul>
-  </aside>
+</nav>
 
-</section>
+<div class="container">
 
-<footer class="c_12">
-  ⓒ HomeLife Hub All Rights Reserved. | 202535009 현세은
+    <aside class="c3">
+        <div class="side-box">
+            <h2>신고 연락처</h2>
+            <ul>
+                <li><a href="safety.html">가스안전 1544-4500</a></li>
+                <li><a href="safety.html">화재신고 119</a></li>
+                <li><a href="safety.html">전기안전 123</a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <section id="main" class="c9">
+        <div class="hero">
+            <img src="./img/card-safety.png" alt="주거 안전" loading="lazy">
+            <div class="hero-overlay"></div>
+            <div class="hero-text">
+                <p class="eyebrow">안전 &amp; 커뮤니티</p>
+                <h2>안전한 집, 믿을 수 있는 체크리스트</h2>
+                <p>주거 안전 점검과 유지보수 가이드를 통해 집의 위험 요소를 미리 제거합니다.</p>
+            </div>
+        </div>
+
+        <div class="page-overview">
+            <div class="page-summary">
+                <div class="summary-card">
+                    <h3>안전 점검</h3>
+                    <p>화재, 가스, 잠금장치를 중심으로 안전 지표를 확인합니다.</p>
+                </div>
+                <div class="summary-card">
+                    <h3>유지보수</h3>
+                    <p>보일러, 배수, 환기 설비의 주기적 점검을 추천합니다.</p>
+                </div>
+            </div>
+
+            <h2>주거 안전 점검 체크리스트</h2>
+            <ul class="checklist">
+                <li>화재경보기·소화기 작동 여부 확인</li>
+                <li>가스밸브·가스 누수 점검</li>
+                <li>현관·창문 잠금장치 상태 확인</li>
+                <li>누수·결로 흔적 점검</li>
+            </ul>
+
+            <h2>유지보수 가이드</h2>
+            <table>
+                <tr><th>구분</th><th>점검 주기</th></tr>
+                <tr><td>보일러·난방기구</td><td>연 1회 (계절 전)</td></tr>
+                <tr><td>배수구·하수관</td><td>분기별 1회</td></tr>
+                <tr><td>필터·환기</td><td>월 1회</td></tr>
+            </table>
+
+            <h2>사용자 후기</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <img class="card-img" src="./img/card-interior.png" alt="안전한 주거" loading="lazy">
+                    <div class="card-body">
+                        <h3>첫 자취를 시작한 20대</h3>
+                        <p>체크리스트 덕분에 이사 당일 전입신고를 빠짐없이 챙겼습니다.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img" src="./img/card-bedroom.png" alt="세련된 침실" loading="lazy">
+                    <div class="card-body">
+                        <h3>신혼부부 사용자</h3>
+                        <p>유지보수 가이드를 참고해 예산 대비 효율적인 관리 계획을 세웠습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <aside class="c1">
+        <div class="side-box">
+            <h2>안전 우선순위</h2>
+            <ul>
+                <li>가스와 전기 시설은 즉시 점검</li>
+                <li>소화기와 경보기 유통기한 확인</li>
+                <li>누수·결로는 빠르게 보수</li>
+            </ul>
+        </div>
+        <div class="side-box">
+            <h2>빠른 메시지</h2>
+            <p>안전 점검은 주거 만족도를 높이는 첫걸음입니다. 정기 점검을 생활화하세요.</p>
+        </div>
+    </aside>
+
+    <div class="clear"></div>
+</div>
+
+<footer>
+    NESTRA — 스마트 주거 라이프 플랫폼<br>
+    <a href="#">개인정보처리방침</a> | <a href="#">이용약관</a> | <a href="#">국토교통부</a> | <a href="#">한국부동산원</a><br>
+    COPYRIGHT(C) NESTRA All Rights Reserved.
 </footer>
 
-<script>
-function submitReview() {
-  var content = document.getElementById('reviewContent').value.trim();
-  if (!content) { alert('후기 내용을 입력해주세요.'); return; }
-  document.getElementById('reviewSuccess').style.display = 'block';
-  document.getElementById('reviewContent').value = '';
-  document.getElementById('reviewName').value = '';
-}
-</script>
 </body>
 </html>

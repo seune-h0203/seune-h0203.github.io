@@ -1,226 +1,145 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Layout & SpaceFit | HomeLife Hub</title>
-<style>
-* { box-sizing:border-box; margin:0; padding:0; }
-ul { list-style-type:none; }
-body { font-family:'맑은 고딕','돋움'; font-size:100%; }
-
-.c_3  { width:25%;    float:left; padding:10px; }
-.c_8  { width:66.66%; float:left; padding:10px; }
-.c_12 { width:100%; }
-
-@media only screen and (min-width:768px) {
-  .c_m_3  { width:25%;  }
-  .c_m_9  { width:75%;  }
-  .c_m_12 { width:100%; }
-}
-
-header { height:80px; padding:20px; background-color:#4a7c59; }
-header h1 { color:#fff; font-size:1.5em; line-height:40px; }
-
-aside#menu { background-color:#ffffff; }
-aside#menu li { margin:5px 0 0; background-color:#6aaa7e; }
-aside#menu li a { display:block; padding:10px 14px; color:#fff; text-decoration:none; font-size:0.9em; }
-aside#menu li a:hover, aside#menu li.active a { background-color:#2d5a3d; }
-
-section#main { padding:5px; font-size:0.95em; line-height:138%; }
-section#main img { width:100%; }
-
-.page-banner { position:relative; margin-bottom:14px; }
-.page-banner img { width:100%; height:180px; object-fit:cover; display:block; }
-.page-banner .btxt { position:absolute; bottom:0; left:0; right:0; background:rgba(0,0,0,0.5); color:#fff; padding:10px 14px; }
-.page-banner .btxt h2 { font-size:1em; margin-bottom:2px; }
-.page-banner .btxt p  { font-size:0.8em; opacity:0.9; }
-
-.sec-title { font-size:0.97em; color:#2d5a3d; border-left:4px solid #6aaa7e; padding-left:9px; margin:14px 0 9px; }
-
-/* 탭 필터 */
-.tab-bar { overflow:hidden; margin-bottom:10px; }
-.tab-btn {
-  float:left; padding:6px 14px; margin-right:4px; margin-bottom:4px;
-  border:1px solid #4a7c59; background:#fff; color:#4a7c59;
-  font-size:0.83em; cursor:pointer; font-family:inherit; border-radius:3px;
-}
-.tab-btn.active, .tab-btn:hover { background:#4a7c59; color:#fff; }
-
-/* 카드 그리드 */
-.layout-grid { overflow:hidden; }
-.layout-card {
-  float:left; width:48%; margin-right:2%; margin-bottom:12px;
-  background:#f5fbf5; border:1px solid #c8e6c9; border-radius:5px; overflow:hidden;
-}
-.layout-card:nth-child(2n) { margin-right:0; }
-.layout-card img { width:100%; height:120px; object-fit:cover; display:block; }
-.layout-card-body { padding:8px 10px; }
-.layout-card-body .tag { display:inline-block; background:#c8e6c9; color:#2d5a3d; font-size:0.75em; padding:1px 7px; border-radius:3px; margin-bottom:4px; }
-.layout-card-body h4 { font-size:0.87em; color:#2d5a3d; margin-bottom:4px; }
-.layout-card-body p  { font-size:0.8em; color:#555; line-height:1.5; }
-
-/* 팁 박스 */
-.tip-box { background:#f5fbf5; border:1px solid #c8e6c9; border-radius:5px; padding:10px 12px; margin-bottom:10px; float:left; width:32%; margin-right:2%; }
-.tip-box:last-child { margin-right:0; }
-.tip-box h4 { font-size:0.87em; color:#2d5a3d; margin-bottom:6px; }
-.tip-box ul { padding-left:14px; }
-.tip-box ul li { list-style:disc; font-size:0.8em; color:#444; line-height:1.8; }
-
-aside#photos { margin:5px 0 0; }
-aside#photos ul { overflow:hidden; }
-aside#photos ul li { float:left; width:33.33%; padding:3px; }
-aside#photos ul li img { width:100%; height:90px; object-fit:cover; display:block; }
-
-footer { height:60px; padding:10px; clear:both; text-align:center; background-color:#eeeeee; font-size:0.85em; color:#555; line-height:40px; }
-
-@media only screen and (max-width:767px) {
-  aside#menu  { width:100%; float:none; }
-  section#main { width:100%; float:none; }
-  .layout-card { width:100%; margin-right:0; }
-  .tip-box { width:100%; margin-right:0; }
-  aside#photos ul li { width:50%; }
-}
-</style>
+<title>Layout & SpaceFit - NESTRA — 스마트 주거 라이프 플랫폼</title>
+<link rel="stylesheet" type="text/css" href="./common.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header class="c_12">
-  <h1>🏠 HomeLife Hub – 주거 생활 정보 허브</h1>
+<header>
+    <div class="logo">NESTRA</div>
+    <div class="tagline">스마트 주거 라이프 플랫폼</div>
 </header>
 
-<aside id="menu" class="c_m_3 c_3">
-  <ul>
-    <li><a href="index.html">🏠 Home</a></li>
-    <li><a href="moving.html">📦 Moving &amp; Checklist</a></li>
-    <li class="active"><a href="layout.html">🛋️ Layout &amp; SpaceFit</a></li>
-    <li><a href="rent.html">📊 Rent &amp; Market</a></li>
-    <li><a href="remodel.html">🔨 Remodel &amp; Design</a></li>
-    <li><a href="safety.html">🛡️ Safety &amp; Community</a></li>
-  </ul>
-</aside>
-
-<section id="main" class="c_m_9 c_8">
-
-  <div class="page-banner">
-    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=900&q=80" alt="가구 배치">
-    <div class="btxt">
-      <h2>🛋️ 가구 배치 아이디어 &amp; 공간 활용</h2>
-      <p>공간 유형별 실용적인 가구 배치 아이디어를 확인해보세요.</p>
-    </div>
-  </div>
-
-  <p class="sec-title">🏠 공간 유형별 배치 아이디어</p>
-  <div class="tab-bar">
-    <button class="tab-btn active" onclick="filterLayout(this,'all')">전체</button>
-    <button class="tab-btn" onclick="filterLayout(this,'oneroom')">원룸</button>
-    <button class="tab-btn" onclick="filterLayout(this,'living')">거실</button>
-    <button class="tab-btn" onclick="filterLayout(this,'bedroom')">침실</button>
-    <button class="tab-btn" onclick="filterLayout(this,'kitchen')">주방</button>
-  </div>
-
-  <div class="layout-grid" id="layoutGrid">
-    <div class="layout-card" data-type="oneroom">
-      <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400&q=80" alt="원룸">
-      <div class="layout-card-body">
-        <span class="tag">원룸</span>
-        <h4>20㎡ 원룸 — L자 배치</h4>
-        <p>침대를 창문 쪽 벽에 붙이고 책상·수납장을 L자로 배치해 동선을 최소화합니다.</p>
-      </div>
-    </div>
-    <div class="layout-card" data-type="oneroom">
-      <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&q=80" alt="원룸 수납">
-      <div class="layout-card-body">
-        <span class="tag">원룸</span>
-        <h4>수직 수납 활용법</h4>
-        <p>바닥 대신 벽면 선반으로 수납 공간 확보. 시각적 개방감도 살릴 수 있어요.</p>
-      </div>
-    </div>
-    <div class="layout-card" data-type="living">
-      <img src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=400&q=80" alt="거실">
-      <div class="layout-card-body">
-        <span class="tag">거실</span>
-        <h4>소파 — 창문 방향 배치</h4>
-        <p>소파를 창문과 평행하게 놓으면 채광이 좋아지고 공간이 넓어 보입니다.</p>
-      </div>
-    </div>
-    <div class="layout-card" data-type="living">
-      <img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=400&q=80" alt="거실 러그">
-      <div class="layout-card-body">
-        <span class="tag">거실</span>
-        <h4>러그로 공간 분리</h4>
-        <p>러그를 활용해 거실과 다이닝 공간을 시각적으로 구분하는 오픈플랜 스타일.</p>
-      </div>
-    </div>
-    <div class="layout-card" data-type="bedroom">
-      <img src="https://images.unsplash.com/photo-1571508601891-ca5e7a713859?w=400&q=80" alt="침실">
-      <div class="layout-card-body">
-        <span class="tag">침실</span>
-        <h4>침대 헤드보드 벽 배치</h4>
-        <p>침대를 벽 중앙에 두면 좌우 이동이 편하고 호텔 느낌의 인테리어가 완성됩니다.</p>
-      </div>
-    </div>
-    <div class="layout-card" data-type="kitchen">
-      <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=400&q=80" alt="주방">
-      <div class="layout-card-body">
-        <span class="tag">주방</span>
-        <h4>좁은 주방 — 이동형 아일랜드</h4>
-        <p>이동형 미니 아일랜드로 조리 공간과 수납을 동시에 해결합니다.</p>
-      </div>
-    </div>
-  </div>
-
-  <p class="sec-title" style="clear:both;">✨ 공간 넓어 보이는 핵심 팁</p>
-  <div style="overflow:hidden;">
-    <div class="tip-box">
-      <h4>🪞 거울 &amp; 채광</h4>
-      <ul>
-        <li>창문 맞은편 벽에 큰 거울 배치</li>
-        <li>커튼은 천장까지 길게 달기</li>
-        <li>투명·반투명 파티션 활용</li>
-      </ul>
-    </div>
-    <div class="tip-box">
-      <h4>🎨 컬러 &amp; 조명</h4>
-      <ul>
-        <li>벽·바닥·가구를 유사 톤으로 통일</li>
-        <li>간접조명으로 경계를 부드럽게</li>
-        <li>포인트 컬러는 1개만 사용</li>
-      </ul>
-    </div>
-    <div class="tip-box">
-      <h4>📐 가구 배치</h4>
-      <ul>
-        <li>낮은 가구(소파·침대) 선택</li>
-        <li>다리 있는 가구로 시선 확보</li>
-        <li>대각선 배치로 원근감 강조</li>
-      </ul>
-    </div>
-  </div>
-
-  <aside id="photos" class="c_m_12 c_3">
-    <p class="sec-title" style="clear:both; margin-top:10px;">📸 공간 사례</p>
+<nav>
     <ul>
-      <li><img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=400&q=80" alt="공간1"></li>
-      <li><img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=400&q=80" alt="공간2"></li>
-      <li><img src="https://images.unsplash.com/photo-1597218868981-1b68e15f0065?w=400&q=80" alt="공간3"></li>
+        <li><a href="moving.html">이사 &amp; 체크리스트</a>
+            <ul>
+                <li><a href="moving.html">이사 준비 체크리스트</a></li>
+                <li><a href="moving.html">이사 비용 계산</a></li>
+                <li><a href="moving.html">업체 선택 가이드</a></li>
+            </ul>
+        </li>
+        <li><a href="layout.html">배치 &amp; 공간활용</a>
+            <ul>
+                <li><a href="layout.html">평형별 배치</a></li>
+                <li><a href="layout.html">공간 활용 사례</a></li>
+            </ul>
+        </li>
+        <li><a href="rent.html">전월세 &amp; 시세</a>
+            <ul>
+                <li><a href="rent.html">지역별 시세</a></li>
+                <li><a href="rent.html">면적 비교</a></li>
+                <li><a href="rent.html">계약 유의사항</a></li>
+            </ul>
+        </li>
+        <li><a href="remodel.html">리모델링 &amp; 디자인</a>
+            <ul>
+                <li><a href="remodel.html">비용 가이드</a></li>
+                <li><a href="remodel.html">인테리어 사례</a></li>
+            </ul>
+        </li>
+        <li><a href="safety.html">안전 &amp; 커뮤니티</a>
+            <ul>
+                <li><a href="safety.html">안전 점검</a></li>
+                <li><a href="safety.html">유지보수 가이드</a></li>
+                <li><a href="safety.html">사용자 후기</a></li>
+            </ul>
+        </li>
     </ul>
-  </aside>
+</nav>
 
-</section>
+<div class="container">
 
-<footer class="c_12">
-  ⓒ HomeLife Hub All Rights Reserved. | 202535009 현세은
+    <aside class="c3">
+        <div class="side-box">
+            <h2>관련 메뉴</h2>
+            <ul>
+                <li><a href="remodel.html">리모델링 아이디어</a></li>
+                <li><a href="moving.html">이사 체크리스트</a></li>
+                <li><a href="rent.html">시세 분석 보기</a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <section id="main" class="c9">
+        <div class="hero">
+            <img src="./img/hero.png" alt="침실 배치" loading="lazy">
+            <div class="hero-overlay"></div>
+            <div class="hero-text">
+                <p class="eyebrow">배치 &amp; 공간활용</p>
+                <h2>작은 공간, 큰 가치를 만드는 배치 전략</h2>
+                <p>가구 배치와 소형 주거 공간 활용법을 통해 일상 공간을 보다 효율적으로 설계합니다.</p>
+            </div>
+        </div>
+
+        <div class="page-overview">
+            <div class="page-summary">
+                <div class="summary-card">
+                    <h3>원룸 배치</h3>
+                    <p>수납과 동선을 고려해 침대와 작업 공간을 최적화하세요.</p>
+                </div>
+                <div class="summary-card">
+                    <h3>투룸 신혼집</h3>
+                    <p>거실·주방·침실 영역을 자연스럽게 이어주는 배치를 추천합니다.</p>
+                </div>
+            </div>
+
+            <h2>평형별 배치 아이디어</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <img class="card-img" src="./img/card-interior.png" alt="원룸 배치" loading="lazy">
+                    <div class="card-body">
+                        <h3>원룸 · 단독주택</h3>
+                        <p>침대를 벽면으로 배치하고 접이식 가구를 활용해 여유 공간을 확보합니다.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img" src="./img/card-apartment.png" alt="투룸 배치" loading="lazy">
+                    <div class="card-body">
+                        <h3>투룸 · 신혼집</h3>
+                        <p>거실과 주방을 연결해 개방감을 유지하고, 침실을 차분한 휴식 공간으로 분리합니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>공간 활용 핵심 포인트</h2>
+            <table>
+                <tr><th>구분</th><th>활용 팁</th></tr>
+                <tr><td>수직 공간</td><td>벽면 선반과 장을 활용해 바닥 면적을 확보하세요.</td></tr>
+                <tr><td>가구 선택</td><td>다기능·접이식 가구로 가변적인 생활 공간을 만듭니다.</td></tr>
+                <tr><td>색상</td><td>밝은 톤으로 통일해 공간이 넓어 보이도록 설계합니다.</td></tr>
+                <tr><td>조명</td><td>간접조명과 포인트 조명으로 영역을 분리하세요.</td></tr>
+            </table>
+        </div>
+    </section>
+
+    <aside class="c1">
+        <div class="side-box">
+            <h2>가구 배치 팁</h2>
+            <ul>
+                <li>자주 사용하는 가구는 출입구 근처에 배치</li>
+                <li>높은 가구는 한쪽 벽면으로 몰아 안정감 유지</li>
+                <li>바닥 소파 대신 로우형 가구로 개방감 확보</li>
+            </ul>
+        </div>
+        <div class="side-box">
+            <h2>공간 활용</h2>
+            <p>수납은 벽면과 문 뒤 공간까지 활용하면 생활 동선을 방해하지 않습니다.</p>
+        </div>
+    </aside>
+
+    <div class="clear"></div>
+</div>
+
+<footer>
+    NESTRA — 스마트 주거 라이프 플랫폼<br>
+    <a href="#">개인정보처리방침</a> | <a href="#">이용약관</a> | <a href="#">국토교통부</a> | <a href="#">한국부동산원</a><br>
+    COPYRIGHT(C) NESTRA All Rights Reserved.
 </footer>
 
-<script>
-function filterLayout(btn, type) {
-  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
-  btn.classList.add('active');
-  document.querySelectorAll('.layout-card').forEach(function(card){
-    card.style.display = (type === 'all' || card.dataset.type === type) ? '' : 'none';
-  });
-}
-</script>
 </body>
 </html>
