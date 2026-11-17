@@ -62,7 +62,7 @@ button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 .prog i{display:block;height:100%;background:var(--navy);transition:width .3s}
 .qtop{display:flex;justify-content:space-between;align-items:baseline;margin:28px 0 14px;font-size:14px;color:var(--sub)}
 .qtop b{font-weight:700;font-size:15px;color:var(--navy);letter-spacing:.02em}
-h2{font-weight:700;font-size:clamp(23px,5.2vw,29px);line-height:1.42;letter-spacing:-.03em;color:var(--navy);margin-bottom:26px}
+h2{font-weight:700;font-size:clamp(23px,5.2vw,29px);line-height:1.42;letter-spacing:-.045em;color:var(--navy);margin-bottom:26px}
 .opts{border-top:1px solid var(--ink)}
 .opt{display:grid;grid-template-columns:44px minmax(0,1fr);align-items:center;width:100%;text-align:left;background:#fff;border:0;border-bottom:1px solid var(--line);padding:18px 6px;font-size:16.5px;font-weight:400;line-height:1.5;cursor:pointer}
 .opt i{font-style:normal;font-weight:700;font-size:14px;color:var(--blue);letter-spacing:.02em}
@@ -150,20 +150,19 @@ const R=[
  {name:'초록매실',cat:'과일 음료',type:'개운 리프레시형',key:'새콤함',tags:['새콤함','개운함','기분 전환'],
   why:'새콤하고 개운한 맛으로 기분을 확 바꾸는 쪽에 끌렸어요. 나른하거나 느끼한 순간에 잘 어울리는 취향이에요.',
   when:'식사 후 입가심, 나른한 오후',pair:'기분을 바꾸고 싶은 순간'},
- {name:'티즐 제로',cat:'티 음료',type:'향기 센스형',key:'은은함',tags:['은은함','가벼움','여유'],
+ {name:'티즐 제로',cat:'티 음료',type:'향기 센스형',key:'향긋함',tags:['향긋함','가벼움','여유'],
   why:'마시는 순간 은은하게 퍼지는 향을 즐기는 취향이에요. 부담 없이 가볍게, 천천히 분위기를 즐기는 쪽이에요.',
   when:'잠깐 쉬어 가는 시간, 가볍게 입을 즐겁게 하고 싶을 때',pair:'가볍게 여유를 즐기는 순간'},
  {name:'자연은 알로에',cat:'알로에 음료',type:'식감 재미형',key:'씹는 재미',tags:['씹는 재미','달콤함','간식 같은'],
   why:'마시면서 씹는 재미까지 챙기는 취향이에요. 음료도 간식처럼 즐기고 싶은 순간에 잘 어울려요.',
   when:'공강 시간, 입이 심심할 때',pair:'재미를 더하고 싶은 순간'}];
-/* 문항: 마시는 순간·고르는 기준·곁들이는 음식·마신 뒤 기분 (일상 선택 상황, 문형 짧게 통일)
-   각 보기 5개는 음료 5종에 1:1 대응
-   0 아침햇살 / 1 하늘보리 / 2 초록매실 / 3 티즐 제로 / 4 자연은 알로에 */
+/* 문항: 식감·맛·향·마시고 싶은 상황. 각 보기 5개는 음료 5종에 1:1 대응
+   0 아침햇살=고소·든든·부드러움 / 1 하늘보리=담백·깔끔 / 2 초록매실=새콤·개운 / 3 티즐 제로=향긋·가벼움 / 4 알로에=씹는 재미 */
 const Q=[
- {q:'음료가 가장 생각나는 순간은?',a:[['바쁜 아침',0],['식사하는 동안',1],['식사를 마친 직후',2],['잠깐 쉬는 시간',3],['입이 심심한 시간',4]]},
- {q:'음료를 고를 때 가장 먼저 따지는 건?',a:[['속을 든든하게 채워 주는 것',0],['물처럼 계속 마실 수 있는 것',1],['입안이 개운해지는 것',2],['부담 없이 가벼운 것',3],['마시는 재미가 있는 것',4]]},
- {q:'음료와 함께 먹고 싶은 건?',a:[['빵이나 시리얼 같은 간단한 아침',0],['밥과 국이 있는 한 끼 식사',1],['고기나 튀김 같은 기름진 음식',2],['샐러드나 디저트',3],['과자나 젤리 같은 간식',4]]},
- {q:'마시고 난 뒤 남았으면 하는 기분은?',a:[['든든하게 채워진 기분',0],['편안하고 부담 없는 기분',1],['상쾌하게 전환된 기분',2],['여유로운 기분',3],['즐거운 기분',4]]}
+ {q:'음료에서 어떤 식감이 좋아요?',a:[['부드러운 목넘김',0],['깔끔한 느낌',1],['산뜻한 느낌',2],['가벼운 목넘김',3],['씹히는 식감',4]]},
+ {q:'가장 끌리는 맛은 무엇인가요?',a:[['고소한 맛',0],['담백한 맛',1],['새콤한 맛',2],['향긋한 맛',3],['달콤한 맛',4]]},
+ {q:'어떤 향이 좋아요?',a:[['고소한 곡물 향',0],['구수한 보리 향',1],['상큼한 과일 향',2],['향긋한 차 향',3],['달콤한 과일 향',4]]},
+ {q:'언제 가장 마시고 싶어요?',a:[['아침 식사와 함께',0],['운동 후 갈증날 때',1],['느끼한 식사 후 입가심할 때',2],['잠깐 쉬며 가볍게 즐길 때',3],['입이 심심해 간식이 필요할 때',4]]}
 ];
 const KEY='gachon-drink-ranking-v1';
 const pad=n=>String(n).padStart(2,'0');
@@ -233,8 +232,7 @@ function analyze(){
 }
 function winner(){
   const max=Math.max(...scores),win=scores.map((v,i)=>v===max?i:-1).filter(i=>i>=0);
-  const pick=win.includes(answers[1])?answers[1]:win.reduce((a,b)=>answers.lastIndexOf(b)>answers.lastIndexOf(a)?b:a,win[0]);
-  return {win,i:pick};
+  return {win,i:win.reduce((a,b)=>answers.lastIndexOf(b)>answers.lastIndexOf(a)?b:a,win[0])};
 }
 async function result(){
   const {win,i}=winner();lastWin=i;const r=R[i];
@@ -245,7 +243,7 @@ async function result(){
    <div class="rtop"><small>나의 음료 취향은</small><h1>${r.name}</h1><p>${r.type}</p></div>
    <div class="pad">
     <div class="rbody"><div class="shot"><img src="${IMGS[i]}" alt="${r.name} 제품 사진"></div>
-    <div><div class="tags">${r.tags.map(t=>`<span>#${t}</span>`).join('')}</div><p class="rwhy">${r.why}</p>${win.length>1?'<p class="tie">같은 점수가 있어 맛 문항 선택을 우선해 정했어요.</p>':''}</div></div>
+    <div><div class="tags">${r.tags.map(t=>`<span>#${t}</span>`).join('')}</div><p class="rwhy">${r.why}</p>${win.length>1?'<p class="tie">같은 점수가 있어 가장 마지막에 고른 쪽으로 정했어요.</p>':''}</div></div>
     <dl class="facts"><div><dt>잘 어울리는 순간</dt><dd>${r.when}</dd></div><div><dt>${second?'함께 끌린 취향':'취향 한 줄'}</dt><dd>${second?`${R[second.k].name} (${R[second.k].key})`:`${r.key}에 한결같이 끌렸어요`}</dd></div></dl>
     <div class="sec"><h3>내 선택 분포<span>4문항 기준</span></h3>
       ${R.map((x,k)=>`<div class="mine-row${k===i?' hi':''}"><span class="n">${x.name}</span><div class="dots">${Array.from({length:Q.length},(_,d)=>d).map(d=>`<i class="${d<scores[k]?'on':''}"></i>`).join('')}</div><span class="v">${scores[k]}/${Q.length}</span></div>`).join('')}
